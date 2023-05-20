@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040E93912A17C43B00A0749A /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E93902A17C43B00A0749A /* ExpenseItem.swift */; };
+		040E93932A17C49000A0749A /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E93922A17C49000A0749A /* Expenses.swift */; };
+		040E93952A17C9D100A0749A /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E93942A17C9D100A0749A /* AddView.swift */; };
 		047E2AC82A16BE1F00D3F9BA /* iExpenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E2AC72A16BE1F00D3F9BA /* iExpenseApp.swift */; };
 		047E2ACA2A16BE1F00D3F9BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E2AC92A16BE1F00D3F9BA /* ContentView.swift */; };
 		047E2ACC2A16BE2100D3F9BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047E2ACB2A16BE2100D3F9BA /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040E93902A17C43B00A0749A /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
+		040E93922A17C49000A0749A /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
+		040E93942A17C9D100A0749A /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		047E2AC42A16BE1F00D3F9BA /* iExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047E2AC72A16BE1F00D3F9BA /* iExpenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseApp.swift; sourceTree = "<group>"; };
 		047E2AC92A16BE1F00D3F9BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +59,9 @@
 			children = (
 				047E2AC72A16BE1F00D3F9BA /* iExpenseApp.swift */,
 				047E2AC92A16BE1F00D3F9BA /* ContentView.swift */,
+				040E93942A17C9D100A0749A /* AddView.swift */,
+				040E93902A17C43B00A0749A /* ExpenseItem.swift */,
+				040E93922A17C49000A0749A /* Expenses.swift */,
 				047E2ACB2A16BE2100D3F9BA /* Assets.xcassets */,
 				047E2ACD2A16BE2100D3F9BA /* Preview Content */,
 			);
@@ -137,7 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040E93932A17C49000A0749A /* Expenses.swift in Sources */,
 				047E2ACA2A16BE1F00D3F9BA /* ContentView.swift in Sources */,
+				040E93952A17C9D100A0749A /* AddView.swift in Sources */,
+				040E93912A17C43B00A0749A /* ExpenseItem.swift in Sources */,
 				047E2AC82A16BE1F00D3F9BA /* iExpenseApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +287,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,6 +317,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
