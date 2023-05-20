@@ -9,25 +9,78 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var showingAddExpense = false
-    @StateObject var expenses = Expenses()
-    
+    @StateObject var expenses1 = Expenses()
+    @StateObject var expenses2 = Expenses1()
     var body: some View {
         NavigationView {
             List {
-                ForEach(expenses.items) { item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            Text(item.type)
+                Section {
+                    ForEach(expenses1.items1) { item in
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(item.name)
+                                    .font(.headline)
+                                
+                                
+                                
+                            }
+                            
+                            Spacer()
+                            if item.amount <= 10 {
+                                Text(item.amount, format: .currency(code: "USD"))
+                                    .padding()
+                                    .background(.blue)
+                                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                            } else if item.amount <= 100 {
+                                Text(item.amount, format: .currency(code: "USD"))
+                                    .padding()
+                                    .background(.green)
+                                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                            } else if item.amount > 100 {
+                                Text(item.amount, format: .currency(code: "USD"))
+                                    .padding()
+                                    .background(.red)
+                                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                            }
                         }
-
-                        Spacer()
-                        Text(item.amount, format: .currency(code: "USD"))
                     }
+                    .onDelete(perform: removeItems1)
+                } header: {
+                    Text("Personal expenses")
                 }
-                .onDelete(perform: removeItems)
+                Section {
+                    ForEach(expenses2.items2) { item in
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(item.name)
+                                    .font(.headline)
+                                  
 
+                            }
+                            
+                            Spacer()
+                            if item.amount <= 10 {
+                                Text(item.amount, format: .currency(code: "USD"))
+                                    .padding()
+                                    .background(.blue)
+                                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                            } else if item.amount <= 100 {
+                                Text(item.amount, format: .currency(code: "USD"))
+                                    .padding()
+                                    .background(.green)
+                                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                            } else if item.amount > 100 {
+                                Text(item.amount, format: .currency(code: "USD"))
+                                    .padding()
+                                    .background(.red)
+                                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                            }
+                        }
+                    }
+                    .onDelete(perform: removeItems2)
+                } header: {
+                    Text("Business expenses")
+                }
             }
             .navigationTitle("iExpense")
             .toolbar {
@@ -37,16 +90,19 @@ struct ContentView: View {
                     Image(systemName: "plus")
                 }
                 .sheet(isPresented: $showingAddExpense) {
-                    AddView(expenses: expenses)
+                    AddView(expenses1: expenses1, expenses2: expenses2)
                 }
             }
         }
     }
-    func removeItems(at offsets: IndexSet) {
-        expenses.items.remove(atOffsets: offsets)
+    func removeItems2(at offsets: IndexSet) {
+        expenses2.items2.remove(atOffsets: offsets)
     }
-}
 
+func removeItems1(at offsets: IndexSet) {
+    expenses1.items1.remove(atOffsets: offsets)
+}
+}
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
