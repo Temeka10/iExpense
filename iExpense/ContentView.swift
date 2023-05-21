@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var showingAddExpense = false
-    @StateObject var expenses1 = Expenses()
-    @StateObject var expenses2 = Expenses1()
+    @StateObject var expenses = Expenses()
+    
     var body: some View {
         NavigationView {
             List {
                 Section {
-                    ForEach(expenses1.items1) { item in
+                    ForEach(expenses.items.filter({$0.type == .personal})) { item in
                         HStack {
                             VStack(alignment: .leading) {
                                 Text(item.name)
@@ -49,7 +49,7 @@ struct ContentView: View {
                     Text("Personal expenses")
                 }
                 Section {
-                    ForEach(expenses2.items2) { item in
+                    ForEach(expenses.items.filter({$0.type == .business})) { item in
                         HStack {
                             VStack(alignment: .leading) {
                                 Text(item.name)
@@ -90,18 +90,20 @@ struct ContentView: View {
                     Image(systemName: "plus")
                 }
                 .sheet(isPresented: $showingAddExpense) {
-                    AddView(expenses1: expenses1, expenses2: expenses2)
+                    AddView(expenses: expenses)
                 }
             }
         }
     }
+    
     func removeItems2(at offsets: IndexSet) {
-        expenses2.items2.remove(atOffsets: offsets)
+        expenses.items.remove(atOffsets: offsets)
     }
 
-func removeItems1(at offsets: IndexSet) {
-    expenses1.items1.remove(atOffsets: offsets)
-}
+    func removeItems1(at offsets: IndexSet) {
+        expenses.items.remove(atOffsets: offsets)
+    }
+    
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
